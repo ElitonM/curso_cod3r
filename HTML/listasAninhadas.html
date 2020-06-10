@@ -1,0 +1,41 @@
+<h1>Listas Aninhadas</h1>
+<h4> <strike> Apaguei a outra sem querer rsrs </strike> </h4>
+
+<ul class="tree">
+
+    <ul>
+        <span pasta>Frontend</span>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+    </ul>
+
+    <ul>
+        <span pasta>Backend</span> 
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <ul>
+                    <span pasta>Item 2.1</span>
+                    <ul>
+                        <li>2.2</li>
+                    </ul>
+                </ul>
+            </ul>
+    </ul>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[pasta]').forEach(folder => {
+        folder.onclick = function (e){
+            console.log('Teste')
+            
+            const ul = folder.nextElementSibling
+            const d = ul.style.display
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>

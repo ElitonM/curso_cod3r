@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--Usei o cabeçalho só pra chamar o  pattern UTF-8-->
+    
+<h1>Tabelas</h1>
+
+<table>
+    <caption>Produtos</caption>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Notebook</td>
+            <td>3125,25R$</td>
+            <td>2</td>
+            <td>64555,50</td>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>3125,25R$</td>
+            <td>2</td>
+            <td>64555,50</td>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>3125,25R$</td>
+            <td>2</td>
+            <td>64555,50</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>21000,450</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse
+    }
+
+    th, td {    /*Seleciona trow e tline, ambos*/
+        padding: 10px
+    }
+
+    thead tr{   /*Seleciona o tr dentro do thead, específico*/
+        border-bottom: solid 3px #444
+    }
+
+    tbody tr:hover {  /*Aplica hover no tr do body*/
+        background-color: #dedede;
+    }
+
+    tfoot {
+        font-style: italic;
+        background-color: gray;
+        color: aliceblue;
+    }
+</style>
+</html>

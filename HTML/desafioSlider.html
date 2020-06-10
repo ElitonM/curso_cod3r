@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tentando Fazer um slider de merda</title>    
+        <!--Importando Styles e Script-->
+        <script src="./slider.js">
+        </script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+<body>
+    <!--Inicio dos Slides-->
+    <div id="slider" class="slider">
+        
+        <div id="slide01" class="slide fade">
+            <div class="numberText"> 1 / 3</div>
+            <img src="../imgs/img_lights_wide.jpg" style="width:100%">
+            <div class="Caption 01"></div>
+        </div>
+    
+        <div class="slide2">
+            <div class="numberText"> 2 / 3</div>
+            <img src="../imgs/img_mountains_wide.jpg" style="width:100%">
+            <div class="Caption 02"></div>
+        </div>
+    
+        <div class="slide3">
+            <div class="numberText"> 3 / 3</div>
+            <img src="../imgs/img_nature_wide.jpg" style="width:100%">
+            <div class="Caption 03"></div>
+        </div>
+    
+        <!-- Slide anterior e próximo -->
+        <a class="prev" onclick="plusSlide(-1)">&#10094;</a>    
+        <a class="prev" onclick="plusSlide(1)">&#10095;</a>
+    
+        <!--Botões de troca de slide-->
+        <div style="text-align: center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+</body>
+
+<script>
+    
+let slidesIndex = 1
+
+showSlides(slidesIndex)
+
+function plusSlide(){
+    showSlides(slidesIndex += n)
+}
+
+function currentImage(novoIndex){
+    slidesIndex = novoIndex
+}
+
+function showSlides(indice){
+
+    let i = 0;
+    let slides = document.getElementsByClassName("slide")
+    let dots = document.getElementsByClassName("dots")
+
+    if(indice > slides.length){
+        slidesIndex = 1                     /* Vai para o primeiro */
+    }
+    if(indice < slides.length){
+        slidesIndex = slides.length         /* Ou seja, vai pro ultimo elemento */
+    }
+    for (i = 0; i < slides.length; i++){
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[indice-1].style.display = "block";
+    dots[indice-1].className += " active";
+}
+</script>
+</html>
+</div>
